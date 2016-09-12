@@ -1,0 +1,79 @@
+#banner
+{
+	position: relative;
+	border-radius: 10px;
+	box-shadow: 10px 10px 5px #111111;
+	background-color: #909090;
+	width: 75%;
+	height: 15%;
+	margin: auto;
+}
+#banner-left
+{
+	position: relative;
+	background-color: #909090;
+	box-shadow: 10px 10px 5px #111111;
+	border-radius: 10px;
+	height: 50%;
+	width: 10%;
+	left: 15%;
+	top: 3%;
+}
+#banner-right
+{
+	position: relative;
+	background-color: #909090;
+	box-shadow: 10px 10px 5px #111111;
+	border-radius: 10px;
+	height: 50%;
+	width: 10%;
+	right: 5px;
+	left: 75%;
+	top: -47%;
+}
+#centerpic
+{
+	position: relative;
+	background-color: #909090;
+	box-shadow: 10px 10px 5px #111111;
+	border-radius: 10px;
+	/*height: auto;
+	width: auto;*/
+	height: 50%;
+	width: 35%;
+	/*left: 15%;*/
+	/*top: 3%;*/
+}
+#doftpng
+{
+	position: absolute;
+	width: 25%;
+	max-width: 100%;
+	height: auto;
+	top: 15px;
+}
+#loupepng
+{
+	position: absolute;
+	width: 18%;
+	max-width: 100%;
+	height: auto;
+	right: 30px;
+	top: 10px;
+}
+#reloadpng
+{
+	position: absolute;
+	max-width: 20px;
+	max-height: 20px;
+	width: 20px;
+	height: 20px;
+	top: 10px;
+	right: 10px;
+}
+#closepng
+{
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+}
