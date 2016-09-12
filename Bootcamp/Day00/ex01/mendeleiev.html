@@ -3,35 +3,693 @@
 		<title>Mendeleiev</title>
 		<style>
 			#atomic { text-align: center }
-			#phead 
-			{ 
+			#ptab { text-align: center;}
+			#phead
+			{
 				font-size: 50px;
 				text-decoration: underline;
+				text-align: center;
 			}
-			#ptab { border: 1px solid black; }
-			td { padding: 15px; }
+			#ptd
+			{
+				border: 1px solid black;
+				width: 70px;
+				height: 50px;
+				text-align: center;
+			}
+			#cap
+			{
+				font-weight: bold;
+				text-decoration: underline;
+			}
+			#pnum
+			{
+				text-align: left;
+				font-size: 60%;
+				font-weight: bold;
+				/*font-family: sans-serif;*/
+			}
+			#pweight
+			{
+				text-align: right;
+				font-size: 60%;
+				font-weight: bold;
+				/*font-family: sans-serif;*/
+			}
+			.nonmetal { background-color: #66ff33; }
+			.metalloid { background-color: #b3ffb0; }
+			.alkali { background-color: #e6b800; }
+			.alkaline { background-color: #e6e600; }
+			.lanthanoid { background-color: #ffb366; }
+			.actinoid { background-color: #bb99ff; }
+			.transmet { background-color: #ff9999; }
+			.posttrans { background-color: #80ffbf; }
+			.halogen { background-color: #4dd2ff; }
+			.noblegas { background-color: #80bfff; }
 		</style>
 	</head>
 	<body>
 		<div id="atomic">
 			<img src="http://www.scienceclarified.com/photos/atomic-mass-3024.jpg" />
 			<hr />
-			<h1 id="phead">Periodic Table</h1>
-			<table id="ptab">
-				<tr>
-					<td>
-						<p>ONE</p>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<p>TWO</p>
-					</td>
-					<td>
-						<p>THREE</p>
-					</td>
-				</tr>
-			</table>
+		</div>
+		<h1 id="phead">Periodic Table</h1>
+		<table id="ptab" align="center">
+
+			<tr>
+				<td id="ptd" class="nonmetal">
+					<p id="pweight">0.1008</p>
+					<b>H</b>
+					<p id="pnum">1</p>
+				</td>
+				<td colspan="16" />
+				<td id="ptd" class="noblegas">
+					<p id="pweight">4.002602</p>
+					<b>He</b>
+					<p id="pnum">2</p>
+				</td>
+			</tr>
+
+			<tr>
+				<td id="ptd" class="alkali">
+					<p id="pweight">6.94</p>
+					<b>Li</b>
+					<p id="pnum">3</p>
+				</td>
+				<td id="ptd" class="alkaline">
+					<p id="pweight">9.0121831</p>
+					<b>Be</b>
+					<p id="pnum">4</p>
+				</td>
+				<td colspan="10" />
+				<td id="ptd" class="metalloid">
+					<p id="pweight">10.81</p>
+					<b>B</b>
+					<p id="pnum">5</p>
+				</td>
+				<td id="ptd" class="nonmetal">
+					<p id="pweight">12.011</p>
+					<b>C</b>
+					<p id="pnum">6</p>
+				</td>
+				<td id="ptd" class="nonmetal">
+					<p id="pweight">14.007</p>
+					<b>N</b>
+					<p id="pnum">7</p>
+				</td>
+				<td id="ptd" class="nonmetal">
+					<p id="pweight">15.999</p>
+					<b>O</b>
+					<p id="pnum">8</p>
+				</td>
+				<td id="ptd" class="halogen">
+					<p id="pweight">18.998403163</p>
+					<b>F</b>
+					<p id="pnum">9</p>
+				</td>
+				<td id="ptd" class="noblegas">
+					<p id="pweight">20.1797</p>
+					<b>Ne</b>
+					<p id="pnum">10</p>
+				</td>
+			</tr>
+
+			<tr>
+				<td id="ptd" class="alkali">
+					<p id="pweight">22.98976928</p>
+					<b>Na</b>
+					<p id="pnum">11</p>
+				</td>
+				<td id="ptd" class="alkaline">
+					<p id="pweight">24.305</p>
+					<b>Mg</b>
+					<p id="pnum">12</p>
+				</td>
+				<td colspan="10" />
+				<td id="ptd" class="posttrans">
+					<p id="pweight">26.9815385</p>
+					<b>Al</b>
+					<p id="pnum">13</p>
+				</td>
+				<td id="ptd" class="metalloid">
+					<p id="pweight">28.085</p>
+					<b>Si</b>
+					<p id="pnum">14</p>
+				</td>
+				<td id="ptd" class="nonmetal">
+					<p id="pweight">30.973761998</p>
+					<b>P</b>
+					<p id="pnum">15</p>
+				</td>
+				<td id="ptd" class="nonmetal">
+					<p id="pweight">32.06</p>
+					<b>S</b>
+					<p id="pnum">16</p>
+				</td>
+				<td id="ptd" class="halogen">
+					<p id="pweight">35.45</p>
+					<b>Ci</b>
+					<p id="pnum">17</p>
+				</td>
+				<td id="ptd" class="noblegas">
+					<p id="pweight">39.948</p>
+					<b>Ar</b>
+					<p id="pnum">18</p>
+				</td>
+			</tr>
+
+			<tr>
+				<td id="ptd" class="alkali">
+					<p id="pweight">39.0983</p>
+					<b>K</b>
+					<p id="pnum">19</p>
+				</td>
+				<td id="ptd" class="alkaline">
+					<p id="pweight">40.078</p>
+					<b>Ca</b>
+					<p id="pnum">20</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">44.955908</p>
+					<b>Sc</b>
+					<p id="pnum">21</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">47.867</p>
+					<b>Ti</b>
+					<p id="pnum">22</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">50.9415</p>
+					<b>V</b>
+					<p id="pnum">23</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">51.9961</p>
+					<b>Cr</b>
+					<p id="pnum">24</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">54.938044</p>
+					<b>Mn</b>
+					<p id="pnum">25</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">55.845</p>
+					<b>Fe</b>
+					<p id="pnum">26</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">58.933194</p>
+					<b>Co</b>
+					<p id="pnum">27</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">58.6934</p>
+					<b>Ni</b>
+					<p id="pnum">28</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">63.546</p>
+					<b>Cu</b>
+					<p id="pnum">29</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">65.38</p>
+					<b>Zn</b>
+					<p id="pnum">30</p>
+				</td>
+				<td id="ptd" class="posttrans">
+					<p id="pweight">69.723</p>
+					<b>Ga</b>
+					<p id="pnum">31</p>
+				</td>
+				<td id="ptd" class="metalloid">
+					<p id="pweight">72.63</p>
+					<b>Ge</b>
+					<p id="pnum">32</p>
+				</td>
+				<td id="ptd" class="metalloid">
+					<p id="pweight">74.921595</p>
+					<b>As</b>
+					<p id="pnum">33</p>
+				</td>
+				<td id="ptd" class="nonmetal">
+					<p id="pweight">78.971</p>
+					<b>Se</b>
+					<p id="pnum">34</p>
+				</td>
+				<td id="ptd" class="halogen">
+					<p id="pweight">79.904</p>
+					<b>Br</b>
+					<p id="pnum">35</p>
+				</td>
+				<td id="ptd" class="noblegas">
+					<p id="pweight">83.798</p>
+					<b>Kr</b>
+					<p id="pnum">36</p>
+				</td>
+			</tr>
+
+			<tr>
+				<td id="ptd" class="alkali">
+					<p id="pweight">85.4678</p>
+					<b>Rb</b>
+					<p id="pnum">37</p>
+				</td>
+				<td id="ptd" class="alkaline">
+					<p id="pweight">87.62</p>
+					<b>Sr</b>
+					<p id="pnum">38</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">88.90584</p>
+					<b>Y</b>
+					<p id="pnum">39</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">91.224</p>
+					<b>Zr</b>
+					<p id="pnum">40</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">92.90637</p>
+					<b>Nb</b>
+					<p id="pnum">41</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">95.95</p>
+					<b>Mo</b>
+					<p id="pnum">42</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">(98)</p>
+					<b>Tc</b>
+					<p id="pnum">43</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">101.07</p>
+					<b>Ru</b>
+					<p id="pnum">44</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">102.90550</p>
+					<b>Rh</b>
+					<p id="pnum">45</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">106.42</p>
+					<b>Pd</b>
+					<p id="pnum">46</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">107.8682</p>
+					<b>Ag</b>
+					<p id="pnum">47</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">112.414</p>
+					<b>Cd</b>
+					<p id="pnum">48</p>
+				</td>
+				<td id="ptd" class="posttrans">
+					<p id="pweight">114.818</p>
+					<b>In</b>
+					<p id="pnum">49</p>
+				</td>
+				<td id="ptd" class="posttrans">
+					<p id="pweight">118.710</p>
+					<b>Sn</b>
+					<p id="pnum">50</p>
+				</td>
+				<td id="ptd" class="metalloid">
+					<p id="pweight">121.760</p>
+					<b>Sb</b>
+					<p id="pnum">51</p>
+				</td>
+				<td id="ptd" class="metalloid">
+					<p id="pweight">127.60</p>
+					<b>Te</b>
+					<p id="pnum">52</p>
+				</td>
+				<td id="ptd" class="halogen">
+					<p id="pweight">126.90447</p>
+					<b>I</b>
+					<p id="pnum">53</p>
+				</td>
+				<td id="ptd" class="noblegas">
+					<p id="pweight">131.293</p>
+					<b>Xe</b>
+					<p id="pnum">54</p>
+				</td>
+			</tr>
+
+			<tr>
+				<td id="ptd" class="alkali">
+					<p id="pweight">132.90545196</p>
+					<b>Cs</b>
+					<p id="pnum">55</p>
+				</td>
+				<td id="ptd" class="alkaline">
+					<p id="pweight">137.327</p>
+					<b>Ba</b>
+					<p id="pnum">56</p>
+				</td>
+				<td id="ptd" class="lanthanoid">
+					<b>57-71</b>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">178.49</p>
+					<b>Hf</b>
+					<p id="pnum">72</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">180.94788</p>
+					<b>Ta</b>
+					<p id="pnum">73</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">183.84</p>
+					<b>W</b>
+					<p id="pnum">74</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">186.207</p>
+					<b>Re</b>
+					<p id="pnum">75</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">190.23</p>
+					<b>Os</b>
+					<p id="pnum">76</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">192.217</p>
+					<b>Ir</b>
+					<p id="pnum">77</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">195.084</p>
+					<b>Pt</b>
+					<p id="pnum">78</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">196.966569</p>
+					<b>Au</b>
+					<p id="pnum">79</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">200.59</p>
+					<b>Hg</b>
+					<p id="pnum">80</p>
+				</td>
+				<td id="ptd" class="posttrans">
+					<p id="pweight">204.38</p>
+					<b>Tl</b>
+					<p id="pnum">81</p>
+				</td>
+				<td id="ptd" class="posttrans">
+					<p id="pweight">207.2</p>
+					<b>Pb</b>
+					<p id="pnum">82</p>
+				</td>
+				<td id="ptd" class="posttrans">
+					<p id="pweight">208.98040</p>
+					<b>Bi</b>
+					<p id="pnum">83</p>
+				</td>
+				<td id="ptd" class="metalloid">
+					<p id="pweight">(209)</p>
+					<b>Po</b>
+					<p id="pnum">84</p>
+				</td>
+				<td id="ptd" class="halogen">
+					<p id="pweight">(210)</p>
+					<b>At</b>
+					<p id="pnum">85</p>
+				</td>
+				<td id="ptd" class="noblegas">
+					<p id="pweight">(222)</p>
+					<b>Rn</b>
+					<p id="pnum">86</p>
+				</td>
+			</tr>
+
+			<tr>
+				<td id="ptd" class="alkali">
+					<p id="pweight">(223)</p>
+					<b>Fr</b>
+					<p id="pnum">87</p>
+				</td>
+				<td id="ptd" class="alkaline">
+					<p id="pweight">(226)</p>
+					<b>Ra</b>
+					<p id="pnum">88</p>
+				</td>
+				<td id="ptd" class="actinoid">
+					<b>89-103</b>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">(267)</p>
+					<b>Rf</b>
+					<p id="pnum">104</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">(268)</p>
+					<b>Db</b>
+					<p id="pnum">105</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">(271)</p>
+					<b>Sg</b>
+					<p id="pnum">106</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">(272)</p>
+					<b>Bh</b>
+					<p id="pnum">107</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">(270)</p>
+					<b>Hs</b>
+					<p id="pnum">108</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">(276)</p>
+					<b>Mt</b>
+					<p id="pnum">109</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">(281)</p>
+					<b>Ds</b>
+					<p id="pnum">110</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">(280)</p>
+					<b>Rg</b>
+					<p id="pnum">111</p>
+				</td>
+				<td id="ptd" class="transmet">
+					<p id="pweight">(285)</p>
+					<b>Cn</b>
+					<p id="pnum">112</p>
+				</td>
+				<td id="ptd" class="posttrans">
+					<p id="pweight">(284)</p>
+					<b>Nh</b>
+					<p id="pnum">113</p>
+				</td>
+				<td id="ptd" class="posttrans">
+					<p id="pweight">(289)</p>
+					<b>Fl</b>
+					<p id="pnum">114</p>
+				</td>
+				<td id="ptd" class="posttrans">
+					<p id="pweight">(288)</p>
+					<b>Mc</b>
+					<p id="pnum">115</p>
+				</td>
+				<td id="ptd" class="posttrans">
+					<p id="pweight">(293)</p>
+					<b>Lv</b>
+					<p id="pnum">116</p>
+				</td>
+				<td id="ptd" class="halogen">
+					<p id="pweight">(294)</p>
+					<b>Ts</b>
+					<p id="pnum">117</p>
+				</td>
+				<td id="ptd" class="noblegas">
+					<p id="pweight">(294)</p>
+					<b>Og</b>
+					<p id="pnum">118</p>
+				</td>
+			</tr>
+		</table>
+		<br />
+		<table align="center">
+			<caption id="cap">57 - 71 (Lanthanoids)</caption>
+			<tr class="lanthanoid">
+				<td id="ptd">
+					<p id="pweight">138.90547</p>
+					<b>La</b>
+					<p id="pnum">57</p>
+				</td>
+				<td id="ptd">
+					<p id="pweight">140.116</p>
+					<b>Ce</b>
+					<p id="pnum">58</p>
+				</td>
+				<td id="ptd">
+					<p id="pweight">140.90766</p>
+					<b>Pr</b>
+					<p id="pnum">59</p>
+				</td>
+				<td id="ptd">
+					<p id="pweight">144.242</p>
+					<b>Nd</b>
+					<p id="pnum">60</p>
+				</td>
+				<td id="ptd">
+					<p id="pweight">(145)</p>
+					<b>Pm</b>
+					<p id="pnum">61</p>
+				</td>
+				<td id="ptd">
+					<p id="pweight">150.36</p>
+					<b>Sm</b>
+					<p id="pnum">62</p>
+				</td>
+				<td id="ptd">
+					<p id="pweight">151.964</p>
+					<b>Eu</b>
+					<p id="pnum">63</p>
+				</td>
+				<td id="ptd">
+					<p id="pweight">157.25</p>
+					<b>Gd</b>
+					<p id="pnum">64</p>
+				</td>
+				<td id="ptd">
+					<p id="pweight">158.92535</p>
+					<b>Tb</b>
+					<p id="pnum">65</p>
+				</td>
+				<td id="ptd">
+					<p id="pweight">162.500</p>
+					<b>Dy</b>
+					<p id="pnum">66</p>
+				</td>
+				<td id="ptd">
+					<p id="pweight">164.93033</p>
+					<b>Ho</b>
+					<p id="pnum">67</p>
+				</td>
+				<td id="ptd">
+					<p id="pweight">167.259</p>
+					<b>Er</b>
+					<p id="pnum">68</p>
+				</td>
+				<td id="ptd">
+					<p id="pweight">168.93422</p>
+					<b>Tm</b>
+					<p id="pnum">69</p>
+				</td>
+				<td id="ptd">
+					<p id="pweight">173.054</p>
+					<b>Yb</b>
+					<p id="pnum">70</p>
+				</td>
+				<td id="ptd">
+					<p id="pweight">174.9668</p>
+					<b>Lu</b>
+					<p id="pnum">71</p>
+				</td>
+			</tr>
+		</table>
+		<table align="center">
+			<caption id="cap">89 - 103 (Actinoids)</caption>
+			<tr class="actinoid">
+				<td id="ptd">
+					<p id="pweight">(227)</p>
+					<b>Ac</b>
+					<p id="pnum">89</p>
+				</td>
+				<td id="ptd">
+					<p id="pweight">232.0377</p>
+					<b>Th</b>
+					<p id="pnum">90</p>
+				</td>
+				<td id="ptd">
+					<p id="pweight">231.03588</p>
+					<b>Pa</b>
+					<p id="pnum">91</p>
+				</td>
+				<td id="ptd">
+					<p id="pweight">238.02891</p>
+					<b>U</b>
+					<p id="pnum">92</p>
+				</td>
+				<td id="ptd">
+					<p id="pweight">(237)</p>
+					<b>Np</b>
+					<p id="pnum">93</p>
+				</td>
+				<td id="ptd">
+					<p id="pweight">(244)</p>
+					<b>Pu</b>
+					<p id="pnum">94</p>
+				</td>
+				<td id="ptd">
+					<p id="pweight">(243)</p>
+					<b>Am</b>
+					<p id="pnum">95</p>
+				</td>
+				<td id="ptd">
+					<p id="pweight">(247)</p>
+					<b>Cm</b>
+					<p id="pnum">96</p>
+				</td>
+				<td id="ptd">
+					<p id="pweight">(247)</p>
+					<b>Bk</b>
+					<p id="pnum">97</p>
+				</td>
+				<td id="ptd">
+					<p id="pweight">(251)</p>
+					<b>Cf</b>
+					<p id="pnum">98</p>
+				</td>
+				<td id="ptd">
+					<p id="pweight">(252)</p>
+					<b>Es</b>
+					<p id="pnum">99</p>
+				</td>
+				<td id="ptd">
+					<p id="pweight">(257)</p>
+					<b>Fm</b>
+					<p id="pnum">100</p>
+				</td>
+				<td id="ptd">
+					<p id="pweight">(258)</p>
+					<b>Md</b>
+					<p id="pnum">101</p>
+				</td>
+				<td id="ptd">
+					<p id="pweight">(259)</p>
+					<b>No</b>
+					<p id="pnum">102</p>
+				</td>
+				<td id="ptd">
+					<p id="pweight">(262)</p>
+					<b>Lr</b>
+					<p id="pnum">103</p>
+				</td>
+			</tr>
+		</table>
+		<hr />
+		<div align="right">
+			<i style="font-family: monospace">&copy; mvanwyk 2016</i>
 		</div>
 	</body>
 </html>
