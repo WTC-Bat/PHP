@@ -3,23 +3,43 @@
 		<title>Day of the 42</title>
 		<link rel="stylesheet" type="text/css" href="doft.css">
 	</head>
-	<body bgcolor="#505050">
-		<!-- <div id="banner" align="right"> -->
+		<body bgcolor="#505050">
 		<div id="banner">
-			<!-- <img id="doftpng" src="resources/day_of_the_42.png" align="left"/> -->
 			<img id="doftpng" src="resources/day_of_the_42.png" />
 			<img id="loupepng" src="resources/loupe.png"/>
-			<img id="reloadpng" src="resources/reload.png" />
-			<img id="closepng" src="resources/close.gif" />
+            <a href="http://disney.com">
+                <img id="reloadpng" src="resources/reload.png" alt="Start from the beginning" title="Start from the beginning" />
+            </a>
+            <a href="http://www.relaischateaux.com.">
+                <img id="closepng" src="resources/close.gif" alt="Disconnect" title="Disconnect" />
+            </a>
 		</div>
 		<div id="banner-left">
-
+			<img id="arrowpng" class="himg" src="resources/arrow.png" alt="Advance" title="Advance" />
+			<img id="mainpng" class="himg" src="resources/main.png" alt="Take" title="Take" />
+            <img id="oeilpng" class="himg" src="resources/oeil.png" alt="Look" title="Look" />
+            <img id="outilpng" class="himg" src="resources/outil.png" alt="Use" title="Use" />
+            <img id="chatpng" class="himg" src="resources/chat-icon.png" alt="Speak" title="Speak" />
 		</div>
-		<div id="banner-right">
-
+		<div id="banner-right">            
+            <img id="bookpng" class="himg" src="resources/book.png" />
+            <img id="towelpng" class="himg" src="resources/towel.png" />
+            <img id="brickjpg" class="himg" src="resources/brick.jpg" />
 		</div>
 		<div id="centerpic">
-
+            <img id="clusterjpg" src="resources/cluster.jpg" usemap="#clustermap" />
+            <map name="clustermap">
+                <area shape="rect" coords="300,300,400,600" href="http://www.ikea.com" alt="Ikea" title="Ikea" />
+                <area shape="rect" coords="500,250,700,400" href="http://www.apple.com" alt="Apple" title="Apple" />
+            </map>
 		</div>
+        <div id="entbox">
+            <p id="ftext">Vous <small style="font-size: 200%; font-family: serif;">entrez</small> alors dans une grande piece remplie d'ordinateurs...</p>
+            <p id="ftext">- Bonjour, vous &ecirc;tes nouveau ici ?</p>
+            <div id="divinp">
+                <input id="finput"/>
+                <button id="btn" type="button">Repondre</button>
+            </div>            
+        </div>
 	</body>
 </html>
