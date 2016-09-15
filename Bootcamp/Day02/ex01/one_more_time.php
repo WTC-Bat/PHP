@@ -150,7 +150,8 @@
 		exit(1);
 	}
 	$monnum = get_month_num($expstr);
-	$epoch = strtotime("1970-01-01 00:00:00");
+	//$epoch = strtotime("1970-01-01 00:00:00");
+	$epoch = strtotime("1970-01-01");
 	$stime = strtotime("$expstr[3]-$monnum-$expstr[1] $expstr[4]");
 	$secs = $stime - $epoch;
 	print("$secs\n");
