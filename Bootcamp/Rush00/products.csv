@@ -1,1 +1,7 @@
-Apple i7,001,../pathorurl/to/image,9999,HAS NO EARPHONE JACK!
+"Apple iPhone 6s","001","Mobile Phones","./res/i6s.png","13,999","128GB - Space Grey"
+"Body Glove Apple iPhone 6/6s Tempered Glass Screen Guard","002","Accessories","./res/scrngrd.jpg","149","Resists hard impacts and deep scratches"
+"Samsung Galaxy A5","003","Mobile Phones","./res/samgala5.png","4,999","16GB - White"
+"Lenovo Phablet 6.98inch","004","Mobile Phones","./res/noimg.png","3,529","16GB - Ebony"
+"Huawei P9","005","Mobile Phones","./res/noimg.png","10,799","32GB - Titanium Grey - 3G"
+"Replacement Battery for Samsung S4/i9500","006","Accessories","./res/noimg.png","249","Lithium-ion Battery - 2800mAh - 3.7 VDC"
+"NAME","ID","CATEGORY","IMAGE","PRICE","DESCRIPTION"
