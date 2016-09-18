@@ -114,7 +114,7 @@ function clear_file($filepath)
 **	$filename	-	$file to append user to (eg. ../private/passwd)
 */
 /*
-function user_exists($user, $filename)
+function user_exists_arr($user, $filename)
 {
 	$file;
 	$line;
@@ -165,7 +165,7 @@ function user_exists($user_name, $filepath)
 **	$filename	-	$file to append user to (eg. ../private/passwd)
 */
 /*
-function add_user($user, $filepath)	//$user is array
+function add_user_arr($user, $filepath)	//$user is array
 {
 	$file;
 
@@ -205,27 +205,14 @@ function add_user($login, $passwd, $filepath)
 		file_put_contents($filepath, $usercsv, FILE_APPEND);
 	else
 		echo "User already exists!\n";
-	/*
-	if (file_exists($filepath))
-	{
-		$hashed = hash("whirlpool", $passwd);
-		$usercsv = $login . "," . $hashed . "\n";
-		if (user_exists($login, $filepath) == FALSE)
-			file_put_contents($filepath, $usercsv, FILE_APPEND);
-		else
-			echo "User already exists!\n";
-	}
-	*/
 }
 
 function remove_user($user_name)
 {
 	$users;
 
-	//if (file_exists("../private/passwd"))		//Assumes passwd is a csv file
-	if (file_exists("./private/passwd"))
+	if (file_exists("./private/passwd"))	//Assumes passwd is a csv file
 	{
-		//$users = get_users("../private/passwd");
 		$users = get_users("./private/passwd");
 	}
 	else
@@ -234,13 +221,8 @@ function remove_user($user_name)
 	}
 	foreach ($users as $u)
 	{
-		//echo "Unsetting: \n";
-		//echo $u["user_name"] . ": ";
-		//echo $u["pwhash"] . "\n";
-		unset($u);
-		//echo "User Removed\n";
-		//echo "User: " . $u["user_name"] . "\n";
-		//echo "Hash: " . $u["pwhash"] . "\n";
+		if ($user_name == $u[0]);
+			unset($u);
 	}
 	clear_file("./private/passwd");
 	foreach ($users as $u)
