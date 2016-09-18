@@ -8,6 +8,7 @@ Functions:
 	user_exists($user, $filename)
 	add_user($user, $filename)
 	remove_user($user_name)
+	create_user_path();
 */
 
 /*
@@ -183,7 +184,7 @@ function add_user($user, $filepath)	//$user is array
 }
 */
 
-function check_user_path()
+function create_user_path()
 {
 	if (!file_exists("./tst"))
 		mkdir ("./tst");
@@ -196,14 +197,8 @@ function add_user($login, $passwd, $filepath)
 	$hashed;
 	$usercsv;
 
-	check_user_path();
-	return ;
-
 	if (!file_exists($filepath))
-	{
-		//mkdir ("$filepath");
-		mkdir ("./random/filing");
-	}
+		create_user_path();
 	$hashed = hash("whirlpool", $passwd);
 	$usercsv = $login . "," . $hashed . "\n";
 	if (user_exists($login, $filepath) == FALSE)
