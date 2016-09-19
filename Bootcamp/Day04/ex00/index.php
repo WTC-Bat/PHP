@@ -23,7 +23,7 @@ if ($_GET["submit"] == "OK")
 	</head>
 	<body>
 		<form>
-			<p>Login: <input name="login" value="<?PHP echo $_SESSION['login'];?>" /></p>
+			<p>Username: <input name="login" value="<?PHP echo $_SESSION['login'];?>" /></p>
 			<p>Password: <input name="passwd" value="<?PHP echo $_SESSION['passwd'];?>" /></p>
 			<input type="submit" name="submit" value="OK" />
 		</form>
