@@ -1,7 +1,7 @@
 <?php
 include("auth.php");
 session_start();
-if ((auth($_GET["login"]), $_GET["passwd"]) == FALSE)
+if ((auth($_GET["login"], $_GET["passwd"])) == FALSE)
 {
 	$_SESSION["loggued_on_user"] = "";
 	echo "ERROR\n";
