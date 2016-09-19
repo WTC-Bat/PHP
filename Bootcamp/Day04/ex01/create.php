@@ -2,6 +2,7 @@
 $userial;
 $serial;
 $uar;
+$cnt;
 
 if ($_POST["submit"] == "OK")
 {
@@ -22,14 +23,11 @@ if ($_POST["submit"] == "OK")
 			echo "ERROR\n";
 			return ;
 		}
+		$cnt++;
 	}
 	$phash = hash("whirlpool", $_POST["passwd"]);
-	$uar = array
-	(
-		"login" => $_POST["login"],
-		"passwd" => $phash,
-	);
-	array_push($userial, $uar);
+	$userial[$cnt + 1]["login"] = $_POST["login"];
+	$userial[$cnt + 1]["passwd"] = $phash;
 	$serial = serialize($userial);
 	file_put_contents("../private/passwd", $serial);
 	echo "OK\n";
