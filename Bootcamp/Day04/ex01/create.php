@@ -16,6 +16,7 @@ if ($_POST["submit"] == "OK")
 	else if (!file_exists("../private/passwd"))
 		mkdir("../private/passwd");
 	$userial = unserialize(file_get_contents("../private/passwd"));
+	$cnt = 0;
 	foreach ($userial as $us)
 	{
 		if ($_POST["login"] == $us["login"])
