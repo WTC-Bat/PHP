@@ -1,6 +1,8 @@
 # PHP
 
-0	-	from ex06 and on, the variables used in the database need to be checked
+0	-	From ex06 and on, the variables used in the database need to be checked.
+	-	Working with the frech databases, so variables from ex11 on are in
+		french
 
 0	-	db_mvanwyk has a test user_card and other tests used in Day05.
 		Should be able to browse by placingthe entire folder in:
