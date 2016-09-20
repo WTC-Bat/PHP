@@ -1,0 +1,15 @@
+Color(array &args):
+===================
+Creates a new Color instance.
+
+Parameters:
+===========
+$args	-	An array containing color value/s.
+			Accepted values:
+				The value of each color:
+					array ("red" => [uint], "green" => [uint], "blue" => [uint])
+				An unsigned int composed of the rbg values:
+					array ("rgb" = [uint])
+
+Methods:
+========
