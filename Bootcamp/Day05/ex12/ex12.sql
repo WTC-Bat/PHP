@@ -1,6 +1,3 @@
-/*SELECT name, first_name FROM ?fiche_personne?*/
-SELECT nom, prenom FROM fiche_personne
-/*WHERE name LIKE '%-%' OR first_name LIKE '%-%'*/
-WHERE nom LIKE '%-%' OR prenom LIKE '%-%'
-/*ORDER BY name ASC, first_name ASC*/
-ORDER BY nom ASC, prenom ASC;
+SELECT last_name, first_name FROM user_card
+WHERE last_name LIKE '%-%' OR first_name LIKE '%-%'
+ORDER BY last_name ASC, first_name ASC
