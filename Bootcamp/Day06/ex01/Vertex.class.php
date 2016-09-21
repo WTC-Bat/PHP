@@ -53,7 +53,7 @@ class Vertex
 			print($this . " destructed." . PHP_EOL);
 	}
 
-	/*Methods*/
+	/*Functions*/
 	public static function doc()
 	{
 		return (file_get_contents("Vertex.doc.txt"));
