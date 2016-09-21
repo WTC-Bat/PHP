@@ -1,0 +1,29 @@
+<- Color ----------------------------------------------------------------------
+A class for managing RGB colors.
+
+An instance of Color can constructed from an RGB value in an array:
+
+	$color = new Color(array("rgb" => [uint]));
+
+Alternatively, an instance of Color can be constructed from individual RGB
+values in an array:
+
+	$color = new Color(array("red" => [uint], "green" => [uint], "blue" => [uint]);
+
+
+Values are converted to integers.
+Negative values and values larger than 255 are ignored.
+Any other use is undefined behaviour.
+
+Color provides the following methods:
+
+public function add(Color $colorObj);
+Adds the colours of the current Color instance to colours of $colorObj.
+
+public function sub(Color $colorObj);
+Subtracts the colours of the current Color instance from colours of $colorObj.
+
+public function mult(Color $colorObj);
+Multiplies the colour values of the current Color instance by the colours of
+$colorObj.
+---------------------------------------------------------------------- Color ->

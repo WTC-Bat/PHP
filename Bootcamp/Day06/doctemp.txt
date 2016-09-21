@@ -1,0 +1,26 @@
+<- +CLASSNAME+ ----------------------------------------------------------------------
++DESCRIPTION+
+
+Conventions in this document:
+-----------------------------
+[type]					-	The parameter's data type
+{optional parameter}	-	Parameters that are optional. Default values will
+							be used if unspecified
+`Class`					-	Indicates a class
+
+Construction:
+=============
+++
+
+Optional Parameter Defaults:
+----------------------------
+++
+
+Methods:
+==========
+++
+
+Notes:
+======
+Any other use is undefined behviour.
+---------------------------------------------------------------------- Vertex ->
