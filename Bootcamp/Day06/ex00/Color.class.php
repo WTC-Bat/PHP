@@ -2,73 +2,60 @@
 class Color
 {
 	/*Properties*/
-	public static $verbose;
-	public $red;
-	public $green;
-	public $blue;
-
-	/*Property Initialization*/
-	$verbose = FALSE;
-	$red = 0;
-	$green = 0;
-	$blue = 0;
+	public static $verbose = FALSE;
+	public $red = 0;
+	public $green = 0;
+	public $blue = 0;
 
 	/*Constructor*/
 	function __construct(array $args)
 	{
-		if ($args['rgb'])
+		if (isset($args["rgb"]))
 		{
-			$this->red = ($args['rgb'] >> 16) & 255;	// % 256?
-			$this->green = ($args['rgb'] >> 8) & 255;	// % 256?
-			$this->blue = $args['rgb'] & 255;			// % 256?
+			$this->red = ($args["rgb"] >> 16) & 255;	// % 256?
+			$this->green = ($args["rgb"] >> 8) & 255;	// % 256?
+			$this->blue = $args["rgb"] & 255;			// % 256?
 		}
-		if ($args['red'])							//if (isset($args['red']))?
-			$this->red = $args['red'];
-		if ($args['green'])							//if (isset($args['red']))?
-			$this->green = $args['green'];
-		if ($args['blue'])							//if (isset($args['red']))?
-			$this->blue = $args['blue'];
-		if (self::verbose == TRUE)
-			self.__toString();
-		/*
-		if (self::verbose == TRUE)
+		if (isset($args["red"]))
+			if (((int)$args["red"]) > 0 && ((int)$args["red"] < 256))		//
+				$this->red = $args["red"];
+		if (isset($args["green"]))
+			if (((int)$args["green"]) > 0 && ((int)$args["green"] < 256))
+				$this->green = $args["green"];
+		if (isset($args["blue"]))
+			if (((int)$args["blue"]) > 0 && ((int)$args["blue"] < 256))
+				$this->blue = $args["blue"];
+		if (self::$verbose == TRUE)
 		{
-			printf("Color(red: %3d, green: %3d, blue: %3d) constructed.",
+			printf("Color(red: %3d, green: %3d, blue: %3d) constructed." . PHP_EOL,
 					$this->red, $this->green, $this->blue);
 		}
-		*/
+
 	}
 
 	/*Destructor*/
 	function __destruct()
 	{
-		if (self::verbose == TRUE)
-			self.__toString();
-		/*
-		if (self::verbose == TRUE)
+		if (self::$verbose == TRUE)
 		{
-			printf("Color(red: %3d, green: %3d, blue: %3d) destructed.",
+			printf("Color(red: %3d, green: %3d, blue: %3d) destructed." . PHP_EOL,
 					$this->red, $this->green, $this->blue);
 		}
-		*/
+
 	}
 
 	/*Methods*/
 	public static function doc()
 	{
-		return (file_get_contents("./Color.doc.txt"));
+		return (file_get_contents("../ex00/Color.doc.txt"));
 	}
 
 	function __toString()
 	{
 		return (sprintf("Color(red: %3d, green: %3d, blue: %3d) destructed.",
-				$this->red, $this->green, $this->blue))
+							$this->red, $this->green, $this->blue));
 	}
 
-	//Don't know if it should be
-	//colorObj + this
-	//-OR-
-	//this + colorObj
 	public function add(Color $colorObj)
 	{
 		return new Color
@@ -78,43 +65,50 @@ class Color
 				"red" => ($colorObj->red + $this->red),
 				"green" => ($colorObj->green + $this->green),
 				"blue" => ($colorObj->blue + $this->blue)
-			);
+			)
 		);
-
-		//return new Color(array())	<- array may need to have the ( after it.
 	}
 
-	//Don't know if it should be
-	//colorObj - this
-	//-OR-
-	//this - colorObj
 	public function sub(Color $colorObj)
 	{
 		return new Color
 		(
 			array
 			(
-				"red" => ($colorObj->red - $this->red),
-				"green" => ($colorObj->green - $this->green),
-				"blue" => ($colorObj->blue - $this->blue)
-			);
+				"red" => ($this->red - $colorObj->red),
+				"green" => ($this->green - $colorObj->green),
+				"blue" => ($this->blue - $colorObj->blue)
+			)
 		);
 	}
 
+	/*
 	//Don't know if it should be
 	//colorObj * this
 	//-OR-
 	//this * colorObj
 	public function mult(Color $colorObj)
 	{
-		return new Color
-		(
-			array
-			(
+		return new Color(
+			array(
 				"red" => ($this->red * $colorObj->red),
 				"green" => ($this->green * $colorObj->green),
 				"blue" => ($this->blue * $colorObj->blue)
 			);
+		);
+	}
+	*/
+
+	public function mult($multiplier)
+	{
+		return new Color
+		(
+			array
+			(
+				"red" => ($this->red * $multiplier),
+				"green" => ($this->green * $multiplier),
+				"blue" => ($this->blue * $multiplier)
+			)
 		);
 	}
 }
