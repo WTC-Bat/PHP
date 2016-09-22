@@ -25,4 +25,24 @@ main/game/etc.			-		handle gameplay. central class
 ship class (abstract?)	-		class for ship objects, or parent to ship
 								objects containinh properties and methods
 								sharedby all ships
- cell class?			-		strore data relevant to each cell
+cell class?				-		strore data relevant to each cell
+dice,die class			-		strore dice data
+weapons class/es		-		ship weapon data
+
+Class Breakdown:
+----------------
+	ShipClass:
+	----------
+		Properties:
+		-----------
+			activated			-		private/public		-		bool
+?			hasMoved			-		private/public		-		bool
+			name				-		public				-		string
+			size				-		public				-		PointObj?
+			-Representation-	-		public				-		img/shape
+			HP(HullPoints)		-		public				-		int/long
+			EP(EnginePower		-		public				-		int/long
+			speed				-		public				-		int
+			handling			-		public				-		int
+			shield				-		public				-		int\long
+			weapons				-		public				-		array
