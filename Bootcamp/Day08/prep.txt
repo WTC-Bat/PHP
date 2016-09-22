@@ -1,0 +1,28 @@
+Concepts: (Require at least one of each)
+---------
+Traits
+Abstract methods
+Reflection
+Attributes
+Static methods
+_clone?
+_invoke?
+_toString?
+_call?
+_get_set?
+overrides?
+protected
+self
+abstract classes
+interfaces
+inheritance
+
+
+Classes:
+--------
+cellGen					-		generate required cells
+main/game/etc.			-		handle gameplay. central class
+ship class (abstract?)	-		class for ship objects, or parent to ship
+								objects containinh properties and methods
+								sharedby all ships
+ cell class?			-		strore data relevant to each cell
