@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<title>Come blow this balloon</title>
+		<style>
+			.divcont
+			{
+				height: 100%;
+				justify-content: center;
+				align-items: center;
+				display: flex;
+			}
+			.divballoon
+			{
+				position: relative;
+				width: 200px;
+				height: 200px;
+				background-color: red;
+				border-radius: 50%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="divcont" align="center">
+			<div class="divballoon" onclick="enlarge(this)"></div>
+		</div>
+		<script>
+			function enlarge(elem)
+			{
+				// var w = document.getElementsByClassName('divballoon').style.width;
+				// var h = document.getElementsByClassName('divballoon').style.height;
+				// w += 10;
+				// h += 10;
+				// document.getElementsByClassName('divballoon').width = w;
+				// document.getElementsByClassName('divballoon').height = h;
+				// elem.innerHTML = "CHEESE";
+			}
+		</script>
+	</body>
+</html>
