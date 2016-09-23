@@ -1,0 +1,55 @@
+#body
+{
+	background: url("res/starnoise.png");
+	/*background: url("http://imgur.com/ttJkTxj");*/
+	/*background-repeat: repeat;*/
+}
+#cell_table
+{
+	table-layout: fixed;
+	margin: auto;
+	padding-top: 100px;
+	/*padding-bottom: 100px;*/
+}
+#divcell
+{
+	width: 5px;
+	height: 5px;
+	text-align: center;
+}
+#pp2
+{
+	text-align: right;
+}
+.cell
+{
+	background-color: #000000;
+	border: 1px solid #333333;
+	text-align: center;
+}
+.cell:hover
+{
+	border: 1px solid #00DD33;
+}
+.ppanel1
+{
+	position: fixed;
+	background: url("res/player_panel.png");
+	/*background: url("http://imgur.com/5wG5tRW");*/
+	width: 200px;
+	height: 100px;
+}
+/*.ppanel2
+{
+	position: fixed;
+	right: 0%;
+	background: url("res/player_panel.png");
+	/*background: url("http://imgur.com/5wG5tRW");
+	width: 200px;
+	height: 100px;
+}*/
+.ppanel1:hover
+{
+	background: url("res/player_panel_hover.png");
+	/*background: url("http://imgur.com/ZftugnW");*/
+}
