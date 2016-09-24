@@ -60,12 +60,11 @@ function getTODO()
 	{
 		var list = document.getElementById("ft_list");
 		var d = document.createElement("div");
-		var kval = cooks[len].split('=');
+		var kval = cooks[len - 1].split('=');
 		var dtxt = document.createTextNode(kval[1]);
 
 		d.setAttribute("onclick", "removeItem(this)");
 		d.appendChild(dtxt);
-		//list.insertBefore(d, list.firstChild);
 		list.appendChild(d);
 	}
 }
