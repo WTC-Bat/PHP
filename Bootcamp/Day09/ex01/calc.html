@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<title>It's over 9000</title>
+		<style>
+			.calcdiv
+			{
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body onload="setInterval(useMe, 30000)">
+		<div class="calcdiv">
+			<input id="lval" type="text" name="lval" value=""/>
+			<select id="opselect">
+				<option value="add">+</option>
+				<option value="subtract">-</option>
+				<option value="multiply">*</option>
+				<option value="divide">/</option>
+				<option value="mod">%</option>
+			</select>
+			<input id="rval" type="text" name="rval" value=""/>
+			<input type="submit" onclick="calculate()" value="Try me!" />
+		</div>
+		<script>
+			function calculate()
+			{
+				var lval = parseInt(document.getElementById('lval').value);
+				var rval = parseInt(document.getElementById('rval').value);
+				if (isNaN(lval) || isNaN(rval) || lval < 0 || rval < 0)
+				{
+					alert("Error :(");
+					return ;
+				}
+				var opselect = document.getElementById("opselect");
+				var op = opselect.options[opselect.selectedIndex].value;
+				var result = 0;
+				switch (op)
+				{
+					case "add":
+						result = lval + rval;
+						break;
+					case "subtract":
+						result = lval - rval;
+						break;
+					case "multiply":
+						result = lval * rval;
+						break;
+					case "divide":
+						if (lval == 0 || rval == 0)
+							result = "It's over 9000!";
+						else
+							result = lval / rval;
+						break;
+					case "mod":
+						if (lval == 0 || rval == 0)
+							result = "It's over 9000!";
+						else
+							result = lval % rval;
+						break;
+				}
+				alert(result);
+				console.log(result);
+			}
+			function useMe()
+			{
+				alert("Please, use me...");
+			}
+		</script>
+	</body>
+</html>

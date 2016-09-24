@@ -21,19 +21,25 @@
 	</head>
 	<body>
 		<div class="divcont" align="center">
+			<!-- <div class="divballoon" onclick="enlarge(this)" oncontextmenu="reset(this)"></div> -->
 			<div class="divballoon" onclick="enlarge(this)"></div>
 		</div>
 		<script>
 			function enlarge(elem)
 			{
-				// var w = document.getElementsByClassName('divballoon').style.width;
-				// var h = document.getElementsByClassName('divballoon').style.height;
-				// w += 10;
-				// h += 10;
-				// document.getElementsByClassName('divballoon').width = w;
-				// document.getElementsByClassName('divballoon').height = h;
-				// elem.innerHTML = "CHEESE";
+				var style = window.getComputedStyle(elem);
+				var w = parseInt(style.getPropertyValue('width'));
+				var h = parseInt(style.getPropertyValue('height'));
+				w = (w + 10) + "px";
+				h = (h + 10) + "px";
+				elem.style.width = w;
+				elem.style.height = h;
 			}
+			// function reset(elem)
+			// {
+			// 	elem.style.width = "200px";
+			// 	elem.style.height = "200px";
+			// }
 		</script>
 	</body>
 </html>
