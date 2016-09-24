@@ -7,12 +7,10 @@ function addNew()
 		var list = document.getElementById("ft_list");
 		var d = document.createElement("div");
 		var dtxt = document.createTextNode(todo);
-		var ccnt = cookieCount();
 
 		d.setAttribute("onclick", "removeItem(this)");
 		d.appendChild(dtxt);
 		list.insertBefore(d, list.firstChild);
-		//document.cookie = "todo" + ccnt + "=" + todo;
 		document.cookie = todo + "=" + todo;
 	}
 }
@@ -51,5 +49,23 @@ function listcook()
 	for (var cnt = 0; cnt < cooks.length; cnt++)
 	{
 		console.log(cooks[cnt]);
+	}
+}
+
+function getTODO()
+{
+	var cooks = document.cookie.split(';');
+
+	for (var len = cooks.length; len > 0; len--)
+	{
+		var list = document.getElementById("ft_list");
+		var d = document.createElement("div");
+		var kval = cooks[len].split('=');
+		var dtxt = document.createTextNode(kval[1]);
+
+		d.setAttribute("onclick", "removeItem(this)");
+		d.appendChild(dtxt);
+		//list.insertBefore(d, list.firstChild);
+		list.appendChild(d);
 	}
 }
