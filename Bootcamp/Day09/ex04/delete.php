@@ -1,5 +1,5 @@
 <?php
-include("insert.php");
+// include("insert.php");
 
 function clear_file()
 {
@@ -30,7 +30,7 @@ function dataArray()
 		{
 			while (($line = fgets($file)) == TRUE)
 			{
-				$csv = str_getcsv("list.csv");
+				$csv = str_getcsv($line, ";");
 				if (count($csvar) < 1)
 					$csvar[0] = $csv;
 				else
@@ -44,45 +44,28 @@ function dataArray()
 
 if (isset($_REQUEST["delete"]))
 {
-	if ($_REQUEST["delete"] == "OK")
-	{
-		$file;
-		$csvar;
+	$file;
+	$line;
+	$csv;
+	$csvar;
+	$cnt = 0;
 
-		$csvar = dataArray();
-		foreach ($csvar as $csv)
-		{
-			if ($todo == $csv[1])
-				unset($csv);
-		}
+	$csvar = dataArray();
+	if (count($csvar) > 0)
+	{
 		clear_file();
 		foreach ($csvar as $csv)
 		{
-			insert($csv[1]);
+			if ($csv[1] != $_REQUEST["delete"])
+			{
+				file_put_contents("list.csv", ($csv[1] . ";" . $csv[1] . "\n"), FILE_APPEND);
+			}
 		}
-		echo("TODO deleted!");
-	}
-	else
-	{
-		echo("Error");
+		// echo($_REQUEST["delete"] . " removed!");
 	}
 }
-
-// function delete($todo)
-// {
-// 	$file;
-// 	$csvar;
-//
-// 	$csvar = dataArray();
-// 	foreach ($csvar as $csv)
-// 	{
-// 		if ($todo == $csv[1])
-// 			unset($csv);
-// 	}
-// 	clear_file();
-// 	foreach ($csvar as $csv)
-// 	{
-// 		insert($csv[1]);
-// 	}
-// }
+else
+{
+	// echo("Error");
+}
 ?>

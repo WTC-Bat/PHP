@@ -23,7 +23,7 @@ $("#btn").click(function()
 		{
 			if (this.readyState == 4 && this.status == 200)
 			{
-				console.log(this.responseText);
+				// console.log(this.responseText);
 			}
 		}
 		ajax.open("GET", "insert.php?insert=" + todo, true);
@@ -32,9 +32,8 @@ $("#btn").click(function()
 	}
 });
 
-$("div #todo").click(function()
+$(document.body).on("click", "#todo", function()
 {
-	console.log("TODO CLICK");
 	if (confirm("Delete " + $(this).html() + "?") == true)
 	{
 		var ajax = new XMLHttpRequest();
@@ -42,10 +41,11 @@ $("div #todo").click(function()
 		{
 			if (this.readyState == 4 && this.status == 200)
 			{
-				console.log(this.responseText);
+				// console.log(this.responseText);
 			}
 		}
-		ajax.open("GET", "delete.php?delete=OK", true);
+		ajax.open("GET", "delete.php?delete=" + ($(this).html()), true);
 		ajax.send();
+		$(this).remove();
 	}
 });

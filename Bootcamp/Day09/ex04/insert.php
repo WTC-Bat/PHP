@@ -32,11 +32,11 @@ if (isset($_REQUEST["insert"]))
 	if (dataExists($todo) == FALSE)
 	{
 		file_put_contents("list.csv", $csv, FILE_APPEND);
-		echo($todo . " saved!");
+		// echo($todo . " saved!");
 	}
 }
 else
 {
-	echo("Error");
+	// echo("Error");
 }
 ?>
