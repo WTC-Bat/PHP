@@ -4,8 +4,8 @@ $("#btn").click(function()
 
 	if (todo != null)
 	{
-		$("#ft_list").prepend("<div id=\"iclick\">" + todo + "</div>");
-		$("#iclick").click(function()
+		$("#ft_list").prepend("<div id=\"todo\">" + todo + "</div>");
+		$("#todo").click(function()
 		{
 			if (confirm("Delete " + $(this).html() + "?") == true)
 			{

@@ -57,7 +57,7 @@ function get_users($filepath)
 
 	$hashed;
 	$usercsv;
-	
+
 	if (!$_POST['login'])
 	{
 		echo "Please enter a login\n";
