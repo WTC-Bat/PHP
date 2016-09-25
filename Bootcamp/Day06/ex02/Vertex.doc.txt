@@ -1,0 +1,89 @@
+<- Vertex ----------------------------------------------------------------------
+A class for storing point data and coordinates.
+
+Conventions in this document:
+-----------------------------
+[type]					-	The parameter's data type
+{optional parameter}	-	Parameters that are optional. Default values will
+							be used if unspecified
+`Class`					-	Indicates a class
+
+Construction:
+================================================================================
+Vertex(array("x" => [float], "y" => [float], "z" => [float]
+				{, "w" = [float], "color" => [`Color`]}));
+
+
+Optional Parameter Defaults:
+----------------------------
+"w"		-	1.0
+"color"	-	A 'white' `Color` object.
+			Color(array("red" => 255, "green" => 255, "blue" => 255))
+
+Methods:
+===============================================================================
+-----------------------------
+public static function doc();
+-----------------------------
+	-	Returns this documentation in a string.
+
+-----------------------
+public function getX();
+-----------------------
+	-	Returns the current instance's X value.
+
+-----------------------
+public function getY();
+-----------------------
+	-	Returns the current instance's Y value.
+
+-----------------------
+public function getZ();
+-----------------------
+	-	Returns the current instance's Z value.
+
+-----------------------
+public function getW();
+-----------------------
+	-	Returns the current instance's W value.
+
+---------------------------
+public function getColor();
+---------------------------
+	-	Returns the current instance's `Color` object.
+
+---------------------------
+public function setX($num);
+---------------------------
+	-	Changes the value of the current instance's X value to the value
+		specified by $num.
+
+---------------------------
+public function setY($num);
+---------------------------
+	-	Changes the value of the current instance's Y value to the value
+		specified by $num.
+
+---------------------------
+public function setZ($num);
+---------------------------
+	-	Changes the value of the current instance's Z value to the value
+		specified by $num.
+
+---------------------------
+public function setW($num);
+---------------------------
+	-	Changes the value of the current instance's W value to the value
+		specified by $num.
+
+---------------------------------------
+public function setColor(Color $color);
+---------------------------------------
+	-	Change the current instance's Color object to one specified by $color.
+
+Notes:
+===============================================================================
+If a "w" parameter is not specified, the default will be used.
+If a "color" is not specified, the default will be used.
+Any other use is undefined behviour.
+---------------------------------------------------------------------- Vertex ->
