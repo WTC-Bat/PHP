@@ -1,0 +1,111 @@
+<html>
+	<head>
+		<title>Come blow this balloon</title>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+			  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+			  crossorigin="anonymous"></script>
+		<style>
+			.divcont
+			{
+				height: 100%;
+				justify-content: center;
+				align-items: center;
+				display: flex;
+			}
+			.divballoon
+			{
+				position: relative;
+				width: 200px;
+				height: 200px;
+				background-color: red;
+				border-radius: 50%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="divcont" align="center">
+			<div class="divballoon"></div>
+		</div>
+		<script>
+			$(".divballoon").click(function()
+			{
+				var w = parseInt($('.divballoon').width());
+				var h = parseInt($('.divballoon').height());
+				if (w >= 415 && h >= 415)
+				{
+					w = "200px";
+					h = "200px";
+				}
+				else
+				{
+					w = (w + 10) + "px";
+					h = (h + 10) + "px";
+				}
+				$('.divballoon').width(w);
+				$('.divballoon').height(h);
+				// logDimensions();
+				changeColour(false);
+			});
+
+			$(".divballoon").mouseleave(function()
+			{
+				var w = parseInt($('.divballoon').width());
+				var h = parseInt($('.divballoon').height());
+				if (w > 200 && h > 200)
+				{
+					w = (w - 5) + "px";
+					h = (h - 5) + "px";
+					$('.divballoon').width(w);
+					$('.divballoon').height(h);
+					// logDimensions();
+					changeColour(true);
+				}
+			});
+
+			function changeColour(backward)
+			{
+				if (backward == true)
+				{
+					switch ($('.divballoon').css("background-color"))
+					{
+						case "rgb(255, 0, 0)":
+							$('.divballoon').css("background-color", "blue");
+							break;
+						case "rgb(0, 128, 0)":
+							$('.divballoon').css("background-color", "red");
+							break;
+						case "rgb(0, 0, 255)":
+							$('.divballoon').css("background-color", "green");
+							break;
+					}
+				}
+				else
+				{
+					switch ($('.divballoon').css("background-color"))
+					{
+						case "rgb(255, 0, 0)":
+							$('.divballoon').css("background-color", "green");
+							break;
+						case "rgb(0, 128, 0)":
+							$('.divballoon').css("background-color", "blue");
+							break;
+						case "rgb(0, 0, 255)":
+							$('.divballoon').css("background-color", "red");
+							break;
+					}
+				}
+			}
+			//
+			//	Uncomment this function and the commented lines above that call
+			//	it "logDimension()"to log to the console the amount by which the circle
+			//	increases or decreases.
+			//
+			// function logDimensions()
+			// {
+			// 	console.log("Width: " + $('.divballoon').width() + "px");
+			// 	console.log("Height: " + $('.divballoon').height() + "px");
+			// 	console.log("\n");
+			// }
+		</script>
+	</body>
+</html>

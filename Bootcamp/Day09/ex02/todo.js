@@ -33,16 +33,6 @@ function removeItem(elem)
 	}
 }
 
-function cookieCount()
-{
-	var cooks = document.cookie.split(';');
-
-	if (cooks[0] == "")
-		return (0);
-	else
-		return (cooks.length);
-}
-
 function getTODO()
 {
 	var cooks = document.cookie.split(';');

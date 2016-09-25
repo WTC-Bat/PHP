@@ -21,8 +21,7 @@
 	</head>
 	<body>
 		<div class="divcont" align="center">
-			<!-- <div class="divballoon" onclick="enlarge(this)" oncontextmenu="reset(this)"></div> -->
-			<div class="divballoon" onclick="enlarge(this)"></div>
+			<div class="divballoon" onclick="enlarge(this)" onmouseleave="reduce(this)"></div>
 		</div>
 		<script>
 			function enlarge(elem)
@@ -30,16 +29,77 @@
 				var style = window.getComputedStyle(elem);
 				var w = parseInt(style.getPropertyValue('width'));
 				var h = parseInt(style.getPropertyValue('height'));
-				w = (w + 10) + "px";
-				h = (h + 10) + "px";
+				if (w >= 415 && h >= 415)
+				{
+					w = "200px";
+					h = "200px";
+				}
+				else
+				{
+					w = (w + 10) + "px";
+					h = (h + 10) + "px";
+				}
 				elem.style.width = w;
 				elem.style.height = h;
+				changeColour(elem, false);
+				logDimensions(elem);
 			}
-			// function reset(elem)
-			// {
-			// 	elem.style.width = "200px";
-			// 	elem.style.height = "200px";
-			// }
+			function reduce(elem)
+			{
+				var style = window.getComputedStyle(elem);
+				var w = parseInt(style.getPropertyValue('width'));
+				var h = parseInt(style.getPropertyValue('height'));
+				if (w > 200 && h > 200)
+				{
+					w = (w - 5);
+					h = (h - 5);
+					elem.style.width = w + "px";
+					elem.style.height = h + "px";
+					changeColour(elem, true);
+				}
+				logDimensions(elem);
+			}
+			function changeColour(elem, backward)
+			{
+				var style = window.getComputedStyle(elem);
+				var col = style.getPropertyValue('background-color');
+				if (backward == true)
+				{
+					switch (col)
+					{
+						case "rgb(255, 0, 0)":
+							elem.style.backgroundColor = "blue";
+							break;
+						case "rgb(0, 128, 0)":
+							elem.style.backgroundColor = "red";
+							break;
+						case "rgb(0, 0, 255)":
+							elem.style.backgroundColor = "green";
+							break;
+					}
+				}
+				else
+				{
+					switch (col)
+					{
+						case "rgb(255, 0, 0)":
+							elem.style.backgroundColor = "green";
+							break;
+						case "rgb(0, 128, 0)":
+							elem.style.backgroundColor = "blue";
+							break;
+						case "rgb(0, 0, 255)":
+							elem.style.backgroundColor = "red";
+							break;
+					}
+				}
+			}
+			function logDimensions(elem)
+			{
+				console.log("Width: " + elem.style.width);
+				console.log("Height: " + elem.style.height);
+				console.log("\n");
+			}
 		</script>
 	</body>
 </html>
