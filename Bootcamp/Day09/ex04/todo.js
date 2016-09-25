@@ -8,6 +8,44 @@ $(document.body).ready(function()
 			$("#ft_list").append(this.responseText);
         }
     };
-    ajax.open("POST", "select.php?select=OK", true);
+	ajax.open("GET", "select.php?select=OK", true);
     ajax.send();
+});
+
+$("#btn").click(function()
+{
+	var todo = prompt("Add new TODO item:");
+
+	if (todo != null)
+	{
+		var ajax = new XMLHttpRequest();
+		ajax.onreadystatechange = function()
+		{
+			if (this.readyState == 4 && this.status == 200)
+			{
+				console.log(this.responseText);
+			}
+		}
+		ajax.open("GET", "insert.php?insert=" + todo, true);
+		ajax.send();
+		$("#ft_list").prepend("<div id=\"todo\">" + todo + "</div>");
+	}
+});
+
+$("div #todo").click(function()
+{
+	console.log("TODO CLICK");
+	if (confirm("Delete " + $(this).html() + "?") == true)
+	{
+		var ajax = new XMLHttpRequest();
+		ajax.onreadystatechange = function()
+		{
+			if (this.readyState == 4 && this.status == 200)
+			{
+				console.log(this.responseText);
+			}
+		}
+		ajax.open("GET", "delete.php?delete=OK", true);
+		ajax.send();
+	}
 });

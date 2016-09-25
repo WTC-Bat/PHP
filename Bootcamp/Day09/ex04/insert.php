@@ -1,6 +1,4 @@
 <?php
-include("delete.php");
-
 function dataExists($todo)
 {
 	$file;
@@ -23,16 +21,22 @@ function dataExists($todo)
 	return (FALSE);
 }
 
-function insert($todo)
+if (isset($_REQUEST["insert"]))
 {
+	$todo = $_REQUEST["insert"];
 	$csv;
 
 	if (!file_exists("list.csv"))
 		touch ("list.csv");
-	$csv = "$todo;$todo";
-	if (dataExists() == FALSE)
+	$csv = "$todo;$todo" . PHP_EOL;
+	if (dataExists($todo) == FALSE)
 	{
 		file_put_contents("list.csv", $csv, FILE_APPEND);
+		echo($todo . " saved!");
 	}
+}
+else
+{
+	echo("Error");
 }
 ?>

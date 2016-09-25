@@ -1,56 +1,36 @@
 <?php
-// function select()
-// {
-// 	$file;
-// 	$line;
-// 	$csv;
-// 	$csvar = array();
-// 	$html;
-//
-// 	if (file_exists("list.csv"))
-// 	{
-// 		$file = fopen("list.csv", "r");
-// 		if ($file)
-// 		{
-// 			$html = "";
-// 			while (($line = fgets($file)) == TRUE)
-// 			{
-// 				$csv = str_getcsv("list.csv");
-// 				// print("<div>" . $csv[1] . "</div>");
-// 				//print("<div id=\"todo\">" . $csv[1] . "</div>");
-// 				$html .= "<div id=\"todo\">" . $csv[1] . "</div>";
-// 			}
-// 			// return ("HUH");
-// 			echo($html);
-// 		}
-// 		fclose($file);
-// 	}
-// 	// return ("ERR");
-// }
-if (file_exists("list.csv"))
+if (isset($_REQUEST["select"]))
 {
-	$file;
-	$line;
-	$csv;
-	$csvar = array();
-	$html;
-	// $csvex = array();
-
-	$file = fopen("list.csv", "r");
-	if ($file)
+	if ($_REQUEST["select"] == "OK")
+	if (file_exists("list.csv"))
 	{
-		$html = "";
-		while (($line = fgets($file)) == TRUE)
+		$file;
+		$line;
+		$csv;
+		$csvar = array();
+		$html;
+
+		$file = fopen("list.csv", "r");
+		if ($file)
 		{
-			$csv = str_getcsv($line, ";");
-			// $csvex = explode(";", $csv);
-			// print("<div>" . $csv[1] . "</div>");
-			//print("<div id=\"todo\">" . $csv[1] . "</div>");
-			$html .= "<div id=\"todo\">" . $csv[1] . "</div>";
+			while (($line = fgets($file)) == TRUE)
+			{
+				$csv = str_getcsv($line, ";");
+				if (count($csvar) < 1)
+					$csvar[0] = $csv;
+				else
+					array_push($csvar, $csv);
+			}
 		}
-		// return ("HUH");
+		fclose($file);
+		$csvar = array_reverse($csvar);
+		$html = "";
+		foreach ($csvar as $c)
+		{
+			$html .= "<div id=\"todo\">" . $c[1] . "</div>";
+		}
+		// return ($html);
 		echo($html);
 	}
-	fclose($file);
 }
 ?>

@@ -42,21 +42,47 @@ function dataArray()
 	return (NULL);
 }
 
-function delete($todo)
+if (isset($_REQUEST["delete"]))
 {
-	$file;
-	$csvar;
+	if ($_REQUEST["delete"] == "OK")
+	{
+		$file;
+		$csvar;
 
-	$csvar = dataArray();
-	foreach ($csvar as $csv)
-	{
-		if ($todo == $csv[1])
-			unset($csv);
+		$csvar = dataArray();
+		foreach ($csvar as $csv)
+		{
+			if ($todo == $csv[1])
+				unset($csv);
+		}
+		clear_file();
+		foreach ($csvar as $csv)
+		{
+			insert($csv[1]);
+		}
+		echo("TODO deleted!");
 	}
-	clear_file();
-	foreach ($csvar as $csv)
+	else
 	{
-		insert($csv[1]);
+		echo("Error");
 	}
 }
+
+// function delete($todo)
+// {
+// 	$file;
+// 	$csvar;
+//
+// 	$csvar = dataArray();
+// 	foreach ($csvar as $csv)
+// 	{
+// 		if ($todo == $csv[1])
+// 			unset($csv);
+// 	}
+// 	clear_file();
+// 	foreach ($csvar as $csv)
+// 	{
+// 		insert($csv[1]);
+// 	}
+// }
 ?>
